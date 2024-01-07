@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ProductManagement.Entities.Models.Message>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/ManagementPanel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Mesajlar</h1>
+ 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Adı Soyadı
+            </th>
+            <th>
+                Konu
+            </th> 
+            <th>
+                Telefon
+            </th> 
+            <th>
+                Kayıt Tarihi 
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.FullName 
+            </td>
+            <td>
+                @item.Subject 
+            </td> 
+            <td>
+                @item.Phone 
+            </td>  
+            <td>
+                @item.CreatedDate.Value.ToString("dd MMM yyyy") 
+            </td>
+            <td>
+                <a class="btn btn-primary" href="@Url.Action("Details", "Messages", new {id = item.Id})">Detay</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

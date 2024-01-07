@@ -1,0 +1,39 @@
+﻿@model ProductManagement.Presentation.Models.ViewModels.MessageCreateViewModel
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Bizimle İletişime Geçin</h1>
+
+<form action="Contact" method="post">
+    <div class="mb-3">
+        <label class="form-label">Adı Soyadı</label>
+        <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Adı Soyadı">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Telefon</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="555 555 55 55">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Konu</label>
+        <input type="text" class="form-control" id="subject" name="subject" placeholder="Konu">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Mesaj</label>
+        <textarea class="form-control" id="details" name="details" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <p class="text-danger">@ViewBag.Message</p>
+    </div>
+
+    <input type="submit" class="btn btn-primary" />
+</form>
+

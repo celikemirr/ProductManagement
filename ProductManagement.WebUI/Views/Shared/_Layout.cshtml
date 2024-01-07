@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    @Html.Partial("_Head")
+</head>
+<body>
+    <partial name="_Header" />
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <partial name="_Footer" />
+
+    @Html.Partial("_Scripts")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

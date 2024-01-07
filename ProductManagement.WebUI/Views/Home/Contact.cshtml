@@ -1,0 +1,51 @@
+﻿@model ProductManagement.Entities.Models.Contact
+
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="text-center">
+    <img src="@Model.ImageURL" width="50%" />
+    <div class="row">
+        <div class="col-6">@Model.Phone</div>
+        <div class="col-6">@Model.Email</div>
+    </div>
+
+    <h1 class="display-4">@Model.Title</h1>
+    <p>@Model.Description</p>
+</div>
+
+<hr />
+
+<form action="Contact" method="post">
+    <div class="mb-3">
+        <label class="form-label">Adı Soyadı</label>
+        <input type="text" class="form-control" id="FullName" name="FullName" placeholder="Adı Soyadı">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Telefon</label>
+        <input type="text" class="form-control" id="Phone" name="Phone" placeholder="555 555 55 55">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Konu</label>
+        <input type="text" class="form-control" id="Subject" name="Subject" placeholder="Konu">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Mesaj</label>
+        <textarea class="form-control" id="Details" name="Details" rows="3"></textarea>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <p class="text-danger">@ViewBag.Message</p>
+    </div>
+
+    <input type="submit" class="btn btn-primary" />
+</form>

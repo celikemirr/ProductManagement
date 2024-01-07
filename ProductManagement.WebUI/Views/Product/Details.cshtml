@@ -1,0 +1,18 @@
+﻿@model ProductManagement.Entities.Models.Product
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   var discountPrice = Model.Price * 0.2;
+}
+
+<h1>@Model.Name</h1>
+
+<img src="@Model.ImageURL" />
+
+<p><del>@Model.Price ₺</del></p>
+<p>@discountPrice ₺</p>
+
+<hr />
+
+<p>@Model.ProductDetail.NumberOfViews görüntülenme</p> 
+<p>@Model.ProductDetail.Description</p>

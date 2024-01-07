@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    @Html.Partial("_Head")
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        @Html.Partial("_Sidebar")
+        @Html.Partial("_Header")
+        <!--page-wrapper-->
+        <div class="page-wrapper">
+            <!--page-content-wrapper-->
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    @RenderBody()
+                </div>
+            </div>
+            <!--end page-content-wrapper-->
+        </div>
+        <!--end page-wrapper-->
+        <!--start overlay-->
+        <div class="overlay toggle-btn-mobile"></div>
+        <!--end overlay-->
+        <!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+        <!--End Back To Top Button-->
+        @Html.Partial("_Footer")
+    </div>
+    <!-- end wrapper -->
+    <!-- JavaScript -->
+    @Html.Partial("_Scripts")
+</body>
+
+</html>

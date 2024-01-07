@@ -1,0 +1,22 @@
+﻿@model ProductManagement.Entities.Models.Contact
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/ManagementPanel/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Anasayfa Bilgileri</h1>
+
+<a class="btn btn-danger" href="@Url.Action("Edit", "Contacts", new {id=Model.Id})">Düzenle</a>
+
+<div class="">
+    <img src="@Model.ImageURL" />
+    <hr />
+    <h2>@Model.Title</h2>
+    <p>@Model.Description</p>
+
+    <hr />
+    <p>@Model.Phone</p>
+    <p>@Model.Email</p>
+
+</div> 

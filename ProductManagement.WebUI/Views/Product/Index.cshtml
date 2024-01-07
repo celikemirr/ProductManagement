@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ProductManagement.Entities.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Ürünlerimiz</h1>
+
+<div class="row">
+    @foreach (var item in Model) {
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="@item.ImageURL" class="card-img-top" alt="..." height="200px">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Name</h5>
+                    <p class="card-text">@item.Price</p>
+                    <a href="@Url.Action("Details", "Product", new {id = item.Id})" class="btn btn-primary">İncele</a>
+                    <a href="@Url.Action("Details", "Product", new {id = item.Id})" class="btn btn-primary">İncele</a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

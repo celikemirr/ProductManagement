@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ProductManagement.Presentation.Models.ViewModels.MessageViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <td>İsim</td>
+                <td>Konu</td>
+                <td>Mesaj</td>
+                <td>Telefon</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.fullName</td>
+                    <td>@item.subject</td>
+                    <td>@item.details</td>
+                    <td>@item.phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

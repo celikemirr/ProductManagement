@@ -1,0 +1,96 @@
+﻿@model ProductManagement.WebUI.Areas.ManagementPanel.Data.LoginViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>Panel Giriş</title>
+	<!--favicon-->
+	<link rel="icon" href="~/areas/images/favicon-32x32.png" type="image/png" />
+	<!-- loader-->
+	<link href="~/areas/css/pace.min.css" rel="stylesheet" />
+	<script src="~/areas/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="~/areas/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&amp;family=Roboto&amp;display=swap" />
+	<!-- Icons CSS -->
+	<link rel="stylesheet" href="~/areas/css/icons.css" />
+	<!-- App CSS -->
+	<link rel="stylesheet" href="~/areas/css/app.css" />
+</head>
+
+<body class="bg-login">
+	<!-- wrapper -->
+	<div class="wrapper">
+		<div class="section-authentication-login d-flex align-items-center justify-content-center">
+			<div class="row">
+				<div class="col-12 col-lg-10 mx-auto">
+					<div class="card radius-15">
+						<div class="row no-gutters">
+							<div class="col-lg-6">
+								<div class="card-body p-md-5">
+									<div class="text-center">
+										<img src="~/areas/images/logo-icon.png" width="80" alt="">
+										<h3 class="mt-4 font-weight-bold">Welcome Back</h3>
+									</div>
+									<div class="input-group shadow-sm rounded mt-5">
+										<div class="input-group-prepend">
+											<span class="input-group-text bg-transparent border-0 cursor-pointer"><img src="~/areas/images/icons/search.svg" alt="" width="16"></span>
+										</div>
+										<input type="button" class="form-control  border-0" value="Log in with google">
+									</div>
+									<div class="login-separater text-center">
+										<span>OR LOGIN WITH EMAIL</span>
+										<hr />
+									</div>
+
+									
+@using (Html.BeginForm("Login", "Account", FormMethod.Post,
+new { enctype = "multipart/form-data" })) {
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new {@class="text-danger"}) 
+         
+        <div class="form-group">
+            <label class="control-label col-md-2">Email</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email,new { htmlAttributes= new {@class="form-control"} })
+                @Html.ValidationMessageFor(model => model.Email, "", new {@class="text-danger"})
+            </div>
+        </div>
+          
+        <div class="form-group">
+            <label class="control-label col-md-2">Şifre</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Password,new { htmlAttributes= new {@class="form-control"} })
+                @Html.ValidationMessageFor(model => model.Password, "", new {@class="text-danger"})
+            </div>
+        </div>
+          
+
+        <br />
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+} 
+ 
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<img src="~/areas/images/login-images/login-frent-img.jpg" class="card-img login-img h-100" alt="...">
+							</div>
+						</div>
+						<!--end row-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end wrapper -->
+</body>
+
+
+<!-- Mirrored from codervent.com/syndash/demo/vertical/authentication-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Mar 2021 13:21:25 GMT -->
+</html>
